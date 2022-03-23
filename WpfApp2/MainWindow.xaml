@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2" xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Center" Margin="0,24,0,0" Text="Товары магазина игрушек" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" BorderThickness="0" IsReadOnly="True"/>
+        <ListView Margin="18,64,18,115" Name="productList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Name}">Название</GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Description}">Описание</GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Manufacturer}">Производитель</GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Price}">Стоимость</GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Activity}">Актуальность</GridViewColumn>
+                    <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=Amount}">Наличие (Шт.)</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="Prodcuts">
+                      
+                </col:ArrayList>
+            </ListView.Resources>"
+        </ListView>
+
+    </Grid>
+</Window>
